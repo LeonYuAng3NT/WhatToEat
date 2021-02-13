@@ -1,30 +1,30 @@
 export default [
   {
-    title: 'Society has put up so many boundaries',
+    title: 'Hackathon Eating Group',
     image: require("../assets/imgs/project13.jpg"),
-    cta: 'View article',
+    cta: 'Join Group',
     horizontal: true
   },
   {
-    title: 'Many limitations on what’s right',
+    title: 'Asian Students Society Chill',
     image: require("../assets/imgs/bg40.jpg"),
-    cta: 'View article'
+    cta: 'Join Group'
   },
   {
-    title: 'Why would anyone pick blue over?',
+    title: 'UofT chill',
     image: require("../assets/imgs/bg28.jpg"),
-    cta: 'View article'
+    cta: 'Join Group'
   },
   {
-    title: 'Pink is obviously a better color',
+    title: 'UofC Eating Group',
     image: require("../assets/imgs/project21.jpg"),
-    cta: 'View article'
+    cta: 'Join Group'
   },
 
   {
-    title: 'The time is now for it to be okay to be',
+    title: 'CS Student Healthy Eat',
     image: require("../assets/imgs/project15.jpg"),
-    cta: 'View article',
+    cta: 'Join Group',
     horizontal: true
   },
   {
