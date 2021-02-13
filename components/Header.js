@@ -141,7 +141,7 @@ class Header extends React.Component {
               color={nowTheme.COLORS.HEADER}
             />
             <Text style={{ fontFamily: 'montserrat-regular' }} size={16} style={styles.tabTitle}>
-              {optionLeft || 'Beauty'}
+              {optionLeft || 'Vegan'}
             </Text>
           </Block>
         </Button>
@@ -155,7 +155,7 @@ class Header extends React.Component {
               color={nowTheme.COLORS.HEADER}
             />
             <Text style={{ fontFamily: 'montserrat-regular' }} size={16} style={styles.tabTitle}>
-              {optionRight || 'Fashion'}
+              {optionRight || 'Non-Vegan'}
             </Text>
           </Block>
         </Button>
