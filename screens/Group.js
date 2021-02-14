@@ -65,24 +65,13 @@ class Group extends React.Component {
       <Block flex>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Block center>
-          <Button
-              color="info"
-              textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
-              style={styles.button}
-              onPress={()=>{Linking.openURL(supportedURL)}}
-            >
-              Join Discord Channel
-            </Button>
-          </Block>
-
-          <Block center>
             <Button
               color="info"
               onPress={() => navigation.navigate('OrderSolo')}
               textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
               style={styles.button}
             >
-              Order Now
+              Order Individually
             </Button>
           </Block>
           <Block center>
@@ -137,7 +126,7 @@ class Group extends React.Component {
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
           contentContainerStyle={{
-            width: width * 3
+            width: width * 2
           }}>
           {cards.map((item, index) => {
             return <Card key={index} item={item} full titleStyle={styles.productTitle} imageStyle={ { height: 300, width: '100%', resizeMode: 'contain' } }/>
@@ -183,9 +172,8 @@ class Group extends React.Component {
           contentContainerStyle={{ paddingBottom: 30, width }}
         >
           {this.renderCards()}
-          {this.renderAlbums()}
           {this.renderButtons()}
-          {this.renderSwitches()}
+
         </ScrollView>
       </Block>
     );

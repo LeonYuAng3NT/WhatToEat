@@ -39,12 +39,14 @@ class OrderGroup extends React.Component {
   toggleSwitch = switchId => this.setState({ [switchId]: !this.state[switchId] });
 
   renderButtons = () => {
+    const { navigation } = this.props;
     return (
       <Block flex>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Block center>
             <Button textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
               style={styles.button}
+              onPress={() => navigation.navigate('NetworkGroup')}
             >
               ORDER NOW!
             </Button>
@@ -90,6 +92,7 @@ class OrderGroup extends React.Component {
     );
   };
   render() {
+    
     return (
       <Block flex center>
         <ScrollView
