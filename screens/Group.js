@@ -133,7 +133,7 @@ class Group extends React.Component {
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
           contentContainerStyle={{
-            width: width * 2
+            width: width * 3
           }}>
           {cards.map((item, index) => {
             return <Card key={index} item={item} full titleStyle={styles.productTitle} imageStyle={ { height: 300, width: '100%', resizeMode: 'contain' } }/>

@@ -68,7 +68,7 @@ class OrderSolo extends React.Component {
 
   renderCards = () => {
     scrollX = new Animated.Value(0);
-    cards = [articles[5], articles[6]]
+    cards = [articles[8], articles[9], articles[10]]
     return (
       <Block flex style={styles.group}>
         <ScrollView
@@ -78,7 +78,7 @@ class OrderSolo extends React.Component {
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
           contentContainerStyle={{
-            width: width * 2
+            width: width * 3
           }}>
           {cards.map((item, index) => {
             return <Card key={index} item={item} full titleStyle={styles.productTitle} imageStyle={ { height: 300, width: '100%', resizeMode: 'contain' } }/>

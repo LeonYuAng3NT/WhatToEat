@@ -58,5 +58,21 @@ export default [
     description:
       'Heart warming soup with noodles and various meat',
     horizontal: true
+  },
+  {
+    title: '$16.99',
+    image: require("../assets/imgs/zhajiangmian.jpg"),
+    subtitle: 'Beijing Zha Jiang Mian',
+    description:
+      'Fresh vegetables on top of homemade noodles served with traditional fragent Zha Jiang Mian sauce.',
+    horizontal: true
+  },
+  {
+    title: '$21.99',
+    image: require("../assets/imgs/pokebowl.jpg"),
+    subtitle: 'Pokebowl',
+    description:
+      'All fresh ingredients of fresh tuna, avocado, seaweed, edamame and more! Served right on top of healthy serving of rice.',
+    horizontal: true
   }
 ];
