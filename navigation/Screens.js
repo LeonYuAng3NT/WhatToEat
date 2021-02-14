@@ -41,7 +41,7 @@ function ComponentsStack(props) {
 function OrderGroupStack(props) {
   return (
     <Stack.Navigator initialRouteName="OrderGroup" mode="card" headerMode="screen">
-      <Stack.Screen name="OrderGroup" component={Components} options={{
+      <Stack.Screen name="OrderGroup" component={OrderGroup} options={{
         header:({ navigation, scene }) => (<Header title="OrderGroup" navigation={navigation} scene={scene} />),
         backgroundColor: "#FFFFFF"
       }}/>
@@ -53,7 +53,7 @@ function OrderGroupStack(props) {
 function OrderSoloStack(props) {
   return (
     <Stack.Navigator initialRouteName="OrderSolo" mode="card" headerMode="screen">
-      <Stack.Screen name="OrderSolo" component={Components} options={{
+      <Stack.Screen name="OrderSolo" component={OrderSolo} options={{
         header:({ navigation, scene }) => (<Header title="OrderSolo" navigation={navigation} scene={scene} />),
         backgroundColor: "#FFFFFF"
       }}/>
