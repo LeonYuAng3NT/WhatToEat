@@ -42,5 +42,21 @@ export default [
     description:
       '8oz certified angus beef® sirloin, cajun spices, spicy creole butter, white wine sautéed creole jumbo prawns, buttered mashed potatoes, roasted asparaguss',
     horizontal: true
+  },
+  {
+    title: '$12.99',
+    image: require("../assets/imgs/pho.jpg"),
+    subtitle: 'Pho Combo',
+    description:
+      'Heart warming soup with noodles and various meat',
+    horizontal: true
+  },
+  {
+    title: '$12.99',
+    image: require("../assets/imgs/Cesar_Salad.jpg"),
+    subtitle: 'Cesar Salad',
+    description:
+      'Heart warming soup with noodles and various meat',
+    horizontal: true
   }
 ];
