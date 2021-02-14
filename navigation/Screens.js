@@ -208,8 +208,8 @@ export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
-        name="Register"
-        component={Register}
+        name="Onboarding"
+        component={Onboarding}
         option={{
           headerTransparent: true
         }}
