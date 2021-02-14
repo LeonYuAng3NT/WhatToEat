@@ -10,6 +10,7 @@ import Pro from '../screens/Pro';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import Components from '../screens/Components';
+import Group from '../screens/Group';
 import Articles from '../screens/Articles';
 import Onboarding from '../screens/Onboarding';
 import SettingsScreen from '../screens/Settings';
@@ -29,6 +30,19 @@ function ComponentsStack(props) {
     <Stack.Navigator initialRouteName="Components" mode="card" headerMode="screen">
       <Stack.Screen name="Components" component={Components} options={{
         header:({ navigation, scene }) => (<Header title="Components" navigation={navigation} scene={scene} />),
+        backgroundColor: "#FFFFFF"
+      }}/>
+    </Stack.Navigator>
+  );
+}
+
+
+
+function GroupStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Group" mode="card" headerMode="screen">
+      <Stack.Screen name="Group" component={Group} options={{
+        header:({ navigation, scene }) => (<Header title="Group" navigation={navigation} scene={scene} />),
         backgroundColor: "#FFFFFF"
       }}/>
     </Stack.Navigator>
@@ -182,6 +196,7 @@ function AppStack(props) {
     >
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Components" component={ComponentsStack} />
+      <Drawer.Screen name="Group" component={GroupStack} />
       <Drawer.Screen name="Articles" component={ArticlesStack} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
       <Drawer.Screen name="Account" component={AccountStack} />

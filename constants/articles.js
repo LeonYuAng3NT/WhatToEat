@@ -28,19 +28,19 @@ export default [
     horizontal: true
   },
   {
-    title: '$377',
-    image: require("../assets/imgs/saint-laurent.jpg"),
-    subtitle: 'Black Jacket',
+    title: '$37',
+    image: require("../assets/imgs/sushi.jpg"),
+    subtitle: 'Sushi Combo',
     description:
-      'The structured shoulders and sleek detailing ensure a sharp silhouette. Team it with a silk pocket.',
+      'The premium Sushi combo to improve your intake of protein and Vitamins',
     horizontal: true
   },
   {
-    title: '$299',
-    image: require("../assets/imgs/saint-laurent1.jpg"),
-    subtitle: 'Saint Laurent',
+    title: '$39',
+    image: require("../assets/imgs/steak.jpg"),
+    subtitle: 'Creole Steak + Prawns',
     description:
-      'The smooth woven-wool is water resistant to ensure you stay pristine after a long-haul flight.',
+      '8oz certified angus beef® sirloin, cajun spices, spicy creole butter, white wine sautéed creole jumbo prawns, buttered mashed potatoes, roasted asparaguss',
     horizontal: true
   }
 ];

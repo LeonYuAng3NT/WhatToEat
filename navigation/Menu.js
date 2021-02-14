@@ -28,6 +28,7 @@ function CustomDrawerContent({
   const screens = [
     "Home",
     "Components",
+    "Group",
     "Articles",
     "Profile",
     "Account",
