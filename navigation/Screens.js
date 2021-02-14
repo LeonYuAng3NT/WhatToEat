@@ -17,6 +17,7 @@ import Group from '../screens/Group';
 import Articles from '../screens/Articles';
 import Onboarding from '../screens/Onboarding';
 import SettingsScreen from '../screens/Settings';
+import CloudCafeteria from '../screens/CloudCafeteria'
 // drawer
 import CustomDrawerContent from "./Menu";
 // header for screens
@@ -27,6 +28,17 @@ const { width } = Dimensions.get("screen");
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+function CloudCafeteriaStack(props){
+  return (
+    <Stack.Navigator initialRouteName="CloudCafeteria" mode="card" headerMode="screen">
+      <Stack.Screen name="CloudCafeteria" component={CloudCafeteria} options={{
+        header:({ navigation, scene }) => (<Header title="Cloud Cafeteria" navigation={navigation} scene={scene} />),
+        backgroundColor: "#FFFFFF"
+      }}/>
+    </Stack.Navigator>
+  );
+}
 
 function ComponentsStack(props) {
   return (
@@ -94,7 +106,7 @@ function AccountStack(props) {
         component={Register}
         options={{
           header: ({ navigation, scene }) => (
-            <Header 
+            <Header
               transparent
               title="Create Account"
               navigation={navigation}
@@ -228,6 +240,7 @@ function AppStack(props) {
       <Drawer.Screen name="Account" component={AccountStack} />
       <Drawer.Screen name="OrderGroup" component={OrderGroupStack} />
       <Drawer.Screen name="OrderSolo" component={OrderSoloStack} />
+      <Drawer.Screen name="Cloud Cafeteria" component={CloudCafeteriaStack} />
     </Drawer.Navigator>
   );
 }
@@ -246,4 +259,3 @@ export default function OnboardingStack(props) {
     </Stack.Navigator>
   );
 }
-

@@ -32,6 +32,7 @@ function CustomDrawerContent({
     "Articles",
     "Profile",
     "Account",
+    "Cloud Cafeteria"
   ];
   return (
     <Block
