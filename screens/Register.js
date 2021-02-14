@@ -41,11 +41,11 @@ class Register extends React.Component {
                         color="#333"
                         size={24}
                       >
-                        Register
+                        User Info
                       </Text>
                     </Block>
 
-                    <Block flex={0.5} row middle space="between" style={{ marginBottom: 18 }}>
+                    {/* <Block flex={0.5} row middle space="between" style={{ marginBottom: 18 }}>
                       <GaButton
                         round
                         onlyIcon
@@ -80,9 +80,9 @@ class Register extends React.Component {
                         color={nowTheme.COLORS.FACEBOOK}
                         style={[styles.social, styles.shadow]}
                       />
-                    </Block>
+                    </Block> */}
                   </Block>
-                  <Block flex={0.1} middle>
+                  {/* <Block flex={0.1} middle>
                     <Text
                       style={{
                         fontFamily: 'montserrat-regular',
@@ -93,7 +93,8 @@ class Register extends React.Component {
                     >
                       or be classical
                     </Text>
-                  </Block>
+                  </Block> */}
+
                   <Block flex={1} middle space="between">
                     <Block center flex={0.9}>
                       <Block flex space="between">
@@ -130,6 +131,23 @@ class Register extends React.Component {
                           </Block>
                           <Block width={width * 0.8}>
                             <Input
+                              placeholder="Postal Code"
+                              style={styles.inputs}
+                              iconContent={
+                                <Icon
+                                  size={16}
+                                  color="#ADB5BD"
+                                  name="pin-32x"
+                                  family="NowExtra"
+                                  style={styles.inputIcons}
+                                />
+                              }
+                            />
+                          </Block>
+
+
+                          <Block width={width * 0.8}>
+                            <Input
                               placeholder="Email"
                               style={styles.inputs}
                               iconContent={
@@ -143,12 +161,67 @@ class Register extends React.Component {
                               }
                             />
                           </Block>
+
+
+                          <Block width={width * 0.8}>
+                            <Input
+                              placeholder="Food Preferences"
+                              style={styles.inputs}
+                              iconContent={
+                                <Icon
+                                  size={16}
+                                  color="#ADB5BD"
+                                  name="favourite-282x"
+                                  family="NowExtra"
+                                  style={styles.inputIcons}
+                                />
+                              }
+                            />
+                          </Block>
+
+                          <Block width={width * 0.8}>
+                            <Input
+                              placeholder="Dietary Restrictions"
+                              style={styles.inputs}
+                              iconContent={
+                                <Icon
+                                  size={16}
+                                  color="#ADB5BD"
+                                  name="simple-remove2x"
+                                  family="NowExtra"
+                                  style={styles.inputIcons}
+                                />
+                              }
+                            />
+                          </Block>
+
+                          <Block width={width * 0.8}>
+                            <Input
+                              placeholder="Interests"
+                              style={styles.inputs}
+                              iconContent={
+                                <Icon
+                                  size={16}
+                                  color="#ADB5BD"
+                                  name="check-22x"
+                                  family="NowExtra"
+                                  style={styles.inputIcons}
+                                />
+                              }
+                            />
+                          </Block>
+
+
+                          
+
+
+
                           <Block
                             style={{ marginVertical: theme.SIZES.BASE, marginLeft: 15}}
                             row
                             width={width * 0.75}
                           >
-                            <Checkbox
+                            {/* <Checkbox
                               checkboxStyle={{
                                 borderWidth: 1,
                                 borderRadius: 2,
@@ -160,7 +233,9 @@ class Register extends React.Component {
                                 fontFamily: 'montserrat-regular'
                               }}
                               label="I agree to the terms and conditions."
-                            />
+                            /> */}
+
+
                           </Block>
                         </Block>
                         <Block center>
@@ -170,7 +245,7 @@ class Register extends React.Component {
                               size={14}
                               color={nowTheme.COLORS.WHITE}
                             >
-                              Get Started
+                              Confirm Changes
                             </Text>
                           </Button>
                         </Block>
