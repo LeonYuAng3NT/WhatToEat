@@ -24,7 +24,7 @@ const { width } = Dimensions.get('screen');
 
 const thumbMeasure = (width - 48 - 32) / 3;
 
-class Articles extends React.Component {
+class OrderGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -171,4 +171,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Articles;
+export default OrderGroup;

@@ -24,7 +24,7 @@ const { width } = Dimensions.get('screen');
 
 const thumbMeasure = (width - 48 - 32) / 3;
 
-class Articles extends React.Component {
+class OrderSolo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +59,7 @@ class Articles extends React.Component {
       <Block flex style={styles.group} center>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Text style={{ fontFamily: 'montserrat-regular' }} >
-            Order with this group to save on shared expenses.
+            Reduce your shared expenses when there are users that join your order.
           </Text>
         </Block>
       </Block>
@@ -171,4 +171,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Articles;
+export default OrderSolo;
