@@ -25,6 +25,18 @@ class Order(ndb.Model):
     message = ndb.TextProperty()
     created = ndb.DateTimeProperty(auto_now_add=True)
 
+def schedule_recommandation(request):
+    """Responds to any HTTP request.
+
+    """
+    request_json = request.get_json()
+    if request.args and 'order' in request.args:
+        return request.args.get('order')
+    elif request_json and 'order' in request_json:
+        return request_json['order']
+    else:
+        return schedule
+
 
 # [START gae_python_query_database]
 def query_database(user_id):
@@ -34,28 +46,29 @@ def query_database(user_id):
     """
     ancestor_key = ndb.Key(Note, user_id)
     query = Note.query(ancestor=ancestor_key).order(-Note.created)
-    notes = query.fetch()
-
+    orders = query.fetch()
+    result = schedule_recommandation(jsonify(order))
     note_messages = []
 
-    for note in notes:
+    for order in order:
         note_messages.append({
-            'friendly_id': note.friendly_id,
-            'message': note.message,
-            'created': note.created
+            'friendly_id': order.friendly_id,
+            'order': order.message,
+            'time_created': order.created
         })
 
     return note_messages
-# [END gae_python_query_database]
+
 
 
 @app.route('/orders', methods=['GET'])
-def list_notes():
+def list_orders():
     """Returns a list of orders added by the current Firebase user."""
 
     # Verify Firebase auth.
     # [START gae_python_verify_token]
     id_token = request.headers['Authorization'].split(' ').pop()
+
     claims = google.oauth2.id_token.verify_firebase_token(
         id_token, HTTP_REQUEST, audience=os.environ.get('GOOGLE_CLOUD_PROJECT'))
     if not claims:
