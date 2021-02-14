@@ -39,12 +39,14 @@ class OrderGroup extends React.Component {
   toggleSwitch = switchId => this.setState({ [switchId]: !this.state[switchId] });
 
   renderButtons = () => {
+    const { navigation } = this.props;
     return (
       <Block flex>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Block center>
             <Button textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
               style={styles.button}
+              onPress={() => navigation.navigate('NetworkGroup')}
             >
               ORDER NOW!
             </Button>
@@ -68,7 +70,7 @@ class OrderGroup extends React.Component {
 
   renderCards = () => {
     scrollX = new Animated.Value(0);
-    cards = [articles[5], articles[6]]
+    cards = [articles[5], articles[6], articles[7]]
     return (
       <Block flex style={styles.group}>
         <ScrollView
@@ -78,7 +80,7 @@ class OrderGroup extends React.Component {
           showsVerticalScrollIndicator={false}
           scrollEventThrottle={16}
           contentContainerStyle={{
-            width: width * 2
+            width: width * 3
           }}>
           {cards.map((item, index) => {
             return <Card key={index} item={item} full titleStyle={styles.productTitle} imageStyle={ { height: 300, width: '100%', resizeMode: 'contain' } }/>
@@ -90,6 +92,7 @@ class OrderGroup extends React.Component {
     );
   };
   render() {
+    
     return (
       <Block flex center>
         <ScrollView

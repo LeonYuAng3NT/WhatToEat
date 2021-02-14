@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   Image,
   Animated,
-  ImageBackground
+  ImageBackground,
+  Linking
 } from 'react-native';
 
 import Articles from '../screens/Articles';
@@ -28,7 +29,7 @@ const OpenURLButton = ({ url, children }) => {
     const handlePress = useCallback(async () => {
       // Checking if the link is supported for links with custom URL scheme.
       const supported = await Linking.canOpenURL(url);
-  
+
       if (supported) {
         // Opening the link with some app, if the URL scheme is "http" the web link should be opened
         // by some browser in the mobile
@@ -37,12 +38,12 @@ const OpenURLButton = ({ url, children }) => {
         Alert.alert(`Don't know how to open this URL: ${url}`);
       }
     }, [url]);
-  
+
     return <Button  color="info"
     textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
     style={styles.button} title={children} onPress={handlePress} />;
   };
-  
+
 class Group extends React.Component {
   constructor(props) {
     super(props);
@@ -60,17 +61,9 @@ class Group extends React.Component {
 
     const { navigation } = this.props;
     return (
-        
+
       <Block flex>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Block center>
-          <OpenURLButton
-              url={supportedURL}
-            >
-              Join Discord Channel
-            </OpenURLButton>
-          </Block>
-        
           <Block center>
             <Button
               color="info"
@@ -78,7 +71,7 @@ class Group extends React.Component {
               textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
               style={styles.button}
             >
-              Order Now
+              Order Individually
             </Button>
           </Block>
           <Block center>
@@ -86,7 +79,7 @@ class Group extends React.Component {
               color="info"
               onPress={() => navigation.navigate('OrderGroup')}
               textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
-           
+
               style={styles.button}
             >
               Order Now with the Group
@@ -96,7 +89,7 @@ class Group extends React.Component {
     </Block>
     );
   };
- 
+
   renderSwitches = () => {
     return (
       <Block flex style={styles.group}>
@@ -179,9 +172,8 @@ class Group extends React.Component {
           contentContainerStyle={{ paddingBottom: 30, width }}
         >
           {this.renderCards()}
-          {this.renderAlbums()}
           {this.renderButtons()}
-          {this.renderSwitches()}
+
         </ScrollView>
       </Block>
     );
