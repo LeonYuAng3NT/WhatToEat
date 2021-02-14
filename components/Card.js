@@ -93,6 +93,7 @@ class Card extends React.Component {
                 size={12}
                 muted={!ctaColor}
                 color={ctaColor || nowTheme.COLORS.ACTIVE}
+                onPress={() => navigation.navigate('Group')}
                 bold
               >
                 {item.cta}

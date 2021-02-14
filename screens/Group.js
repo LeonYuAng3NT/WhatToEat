@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -23,6 +23,26 @@ const { width } = Dimensions.get('screen');
 
 const thumbMeasure = (width - 48 - 32) / 3;
 
+const supportedURL = "https://discord.gg/R4CRU4Qf";
+const OpenURLButton = ({ url, children }) => {
+    const handlePress = useCallback(async () => {
+      // Checking if the link is supported for links with custom URL scheme.
+      const supported = await Linking.canOpenURL(url);
+  
+      if (supported) {
+        // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+        // by some browser in the mobile
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+      }
+    }, [url]);
+  
+    return <Button  color="info"
+    textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
+    style={styles.button} title={children} onPress={handlePress} />;
+  };
+  
 class Group extends React.Component {
   constructor(props) {
     super(props);
@@ -37,26 +57,39 @@ class Group extends React.Component {
   toggleSwitch = switchId => this.setState({ [switchId]: !this.state[switchId] });
 
   renderButtons = () => {
+
+    const { navigation } = this.props;
     return (
+        
       <Block flex>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Block center>
-            <Button
-              textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
-              color="default"
-              style={styles.button}
+          <OpenURLButton
+              url={supportedURL}
             >
-              Join Group's Discord Chat
-            </Button>
+              Join Discord Channel
+            </OpenURLButton>
           </Block>
         
           <Block center>
             <Button
               color="info"
+              onPress={() => navigation.navigate('OrderSolo')}
               textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
               style={styles.button}
             >
               Order Now
+            </Button>
+          </Block>
+          <Block center>
+            <Button
+              color="info"
+              onPress={() => navigation.navigate('OrderGroup')}
+              textStyle={{ fontFamily: 'montserrat-regular', fontSize: 12 }}
+           
+              style={styles.button}
+            >
+              Order Now with the Group
             </Button>
           </Block>
         </Block>

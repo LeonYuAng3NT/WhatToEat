@@ -10,6 +10,8 @@ import Pro from '../screens/Pro';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import Components from '../screens/Components';
+import OrderGroup from '../screens/OrderGroup';
+import OrderSolo from '../screens/OrderSolo'
 import Group from '../screens/Group';
 import Articles from '../screens/Articles';
 import Onboarding from '../screens/Onboarding';
@@ -30,6 +32,29 @@ function ComponentsStack(props) {
     <Stack.Navigator initialRouteName="Components" mode="card" headerMode="screen">
       <Stack.Screen name="Components" component={Components} options={{
         header:({ navigation, scene }) => (<Header title="Components" navigation={navigation} scene={scene} />),
+        backgroundColor: "#FFFFFF"
+      }}/>
+    </Stack.Navigator>
+  );
+}
+
+function OrderGroupStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="OrderGroup" mode="card" headerMode="screen">
+      <Stack.Screen name="OrderGroup" component={Components} options={{
+        header:({ navigation, scene }) => (<Header title="OrderGroup" navigation={navigation} scene={scene} />),
+        backgroundColor: "#FFFFFF"
+      }}/>
+    </Stack.Navigator>
+  );
+}
+
+
+function OrderSoloStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="OrderSolo" mode="card" headerMode="screen">
+      <Stack.Screen name="OrderSolo" component={Components} options={{
+        header:({ navigation, scene }) => (<Header title="OrderSolo" navigation={navigation} scene={scene} />),
         backgroundColor: "#FFFFFF"
       }}/>
     </Stack.Navigator>
@@ -200,6 +225,8 @@ function AppStack(props) {
       <Drawer.Screen name="Articles" component={ArticlesStack} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
       <Drawer.Screen name="Account" component={AccountStack} />
+      <Drawer.Screen name="OrderGroup" component={OrderGroupStack} />
+      <Drawer.Screen name="OrderSolo" component={OrderSoloStack} />
     </Drawer.Navigator>
   );
 }
@@ -208,8 +235,8 @@ export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
-        name="Register"
-        component={Register}
+        name="Onboarding"
+        component={Onboarding}
         option={{
           headerTransparent: true
         }}
