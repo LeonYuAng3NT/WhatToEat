@@ -1,17 +1,52 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS order;
+DROP TABLE IF EXISTS info;
+DROP TABLE IF EXISTS food;
+DROP TABLE IF EXISTS group;
 
 CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
-  password TEXT NOT NULL
+  password TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  postal_code TEXT NOT NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL
 );
 
-CREATE TABLE post (
+CREATE TABLE order(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  author_id INTEGER NOT NULL,
-  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  title TEXT NOT NULL,
-  body TEXT NOT NULL,
-  FOREIGN KEY (author_id) REFERENCES user (id)
+  creator INTEGER NOT NULL,
+  created_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  item TEXT NOT NULL,
+  FOREIGN KEY (item) REFERENCES food(id)
+  FOREIGN KEY (creator) REFERENCES user(id)
+
 );
+
+CREATE TABLE info(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  users_id INTEGER NOT NULL, 
+  interest TEXT,
+  food TEXT,
+  diet_restriction TEXT,
+  FOREIGN KEY (users_id) REFERENCES user (id)
+);
+
+
+CREATE TABLE food{
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  info TEXT NOT NULL,
+  calories INTEGER NOT NULL,
+  price INTEGER NOT NULL,
+  allergy TEXT
+};
+
+CREATE TABLE group{
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  group_name TEXT NOT NULL, 
+  number_of_participants INTEGER NOT NULL,
+  member TEXT,
+  FOREIGN KEY (member) REFERENCES user (id)
+};
