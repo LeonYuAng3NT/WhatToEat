@@ -27,9 +27,6 @@ function CustomDrawerContent({
   const insets = useSafeArea();
   const screens = [
     "Home",
-    "Components",
-    "Group",
-    "Articles",
     "Profile",
     "Account",
     "Cloud Cafeteria"

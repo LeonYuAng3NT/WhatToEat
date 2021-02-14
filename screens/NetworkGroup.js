@@ -8,6 +8,18 @@ const { width } = Dimensions.get("screen");
 
 class NetworkGroup extends React.Component {
 
+  renderETA = () => {
+    return (
+        <Block flex style={styles.group} center>
+          <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+            <Text style={{ fontFamily: 'montserrat-regular' }} >
+              ETA until your food arrives: 15min
+            </Text>
+          </Block>
+        </Block>
+      );
+  }
+
   renderArticles = () => {
     return (
       <ScrollView
@@ -33,7 +45,9 @@ class NetworkGroup extends React.Component {
   render() {
     return (
     <Block flex center style={styles.home}>
+      {this.renderETA()}
       {this.renderArticles()}
+      
     </Block>
     );
   }

@@ -17,7 +17,7 @@ import Group from '../screens/Group';
 import Articles from '../screens/Articles';
 import Onboarding from '../screens/Onboarding';
 import SettingsScreen from '../screens/Settings';
-import CloudCafeteria from '../screens/CloudCafeteria'
+import NetworkGroup from '../screens/NetworkGroup'
 // drawer
 import CustomDrawerContent from "./Menu";
 // header for screens
@@ -29,11 +29,11 @@ const { width } = Dimensions.get("screen");
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function CloudCafeteriaStack(props){
+function NetworkGroupStack(props){
   return (
-    <Stack.Navigator initialRouteName="CloudCafeteria" mode="card" headerMode="screen">
-      <Stack.Screen name="CloudCafeteria" component={CloudCafeteria} options={{
-        header:({ navigation, scene }) => (<Header title="Cloud Cafeteria" navigation={navigation} scene={scene} />),
+    <Stack.Navigator initialRouteName="NetworkGroup" mode="card" headerMode="screen">
+      <Stack.Screen name="NetworkGroup" component={NetworkGroup} options={{
+        header:({ navigation, scene }) => (<Header title="Network Groups" navigation={navigation} scene={scene} />),
         backgroundColor: "#FFFFFF"
       }}/>
     </Stack.Navigator>
@@ -240,7 +240,7 @@ function AppStack(props) {
       <Drawer.Screen name="Account" component={AccountStack} />
       <Drawer.Screen name="OrderGroup" component={OrderGroupStack} />
       <Drawer.Screen name="OrderSolo" component={OrderSoloStack} />
-      <Drawer.Screen name="Cloud Cafeteria" component={CloudCafeteriaStack} />
+      <Drawer.Screen name="NetworkGroup" component={NetworkGroupStack} />
     </Drawer.Navigator>
   );
 }
