@@ -10,6 +10,7 @@ import Pro from '../screens/Pro';
 import Profile from '../screens/Profile';
 import Register from '../screens/Register';
 import Components from '../screens/Components';
+import Login from '../screens/Login';
 import OrderGroup from '../screens/OrderGroup';
 import OrderSolo from '../screens/OrderSolo'
 import Group from '../screens/Group';
