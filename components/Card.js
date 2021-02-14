@@ -23,7 +23,7 @@ class Card extends React.Component {
     const imageStyles = [full ? styles.fullImage : styles.horizontalImage, imageStyle];
     const titleStyles = [styles.cardTitle, titleStyle];
     const cardContainer = [styles.card, styles.shadow, style];
-    const supportedURL = "https://discord.gg/R4CRU4Qf";
+    const supportedURL = "https://discord.gg/XHMUDCJK";
     const imgContainer = [
       styles.imageContainer,
       horizontal ? styles.horizontalStyles : styles.verticalStyles,
